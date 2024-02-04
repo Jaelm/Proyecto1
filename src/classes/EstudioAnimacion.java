@@ -5,6 +5,7 @@
 package classes;
 
 import java.util.concurrent.Semaphore;
+import productores.ProjectManager;
 import productores.Worker;
 
 /**
@@ -23,11 +24,15 @@ public class EstudioAnimacion extends Thread {
     public int entrega;
     public Configuracion confi = new Configuracion();
     public int cantidadWorkers;
-    public Gerente gerente;
-    public Director director;
+    public ProjectManager manager;
+    //public Director director;
     public int diasInit;
     public int sueldoAcumu;
     public int capituloTransmitido;
+
+    public void restartDeadLine() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }
