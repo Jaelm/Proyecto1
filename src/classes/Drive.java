@@ -49,4 +49,67 @@ public class Drive {
     public int getTotalCapPlo(){
         return totalCapPlo;
     }
+    
+    public void updateDrive (String TipoWorker, int PartFinish, boolean isCartoon){
+        switch(TipoWorker){
+            case "guion":
+                if(this.guionQty < this.maxGuionQty){
+                    this.guionQty += PartFinish;
+                    if(this.guionQty > this.maxGuionQty){
+                        this.guionQty = this.maxGuionQty;
+                    }
+                    
+                    System.out.println("Guion producido: " + this.guionQty);
+                }
+                break;
+            case "escenario":
+                if(this.escenarioQty < this.maxEscenarioQty){
+                    this.escenarioQty += PartFinish;
+                    if(this.escenarioQty > this.maxEscenarioQty){
+                        this.escenarioQty = this.maxEscenarioQty;
+                }
+                    
+                    System.out.println("Escenario producido: " + this.escenarioQty);
+                } 
+                break;
+            case "animacion":
+                if(this.animacionQty < this.maxAnimacionQty){
+                    this.animacionQty += PartFinish;
+                    if(this.animacionQty > this.maxAnimacionQty){
+                        this.animacionQty = this.maxAnimacionQty;
+                }
+                    
+                    System.out.println("Escenario producido: " + this.animacionQty);
+                } 
+                break;
+            case "actor":
+                if(this.doblajeQty < this.maxDoblajeQty){
+                    this.doblajeQty += PartFinish;
+                    if(this.doblajeQty > this.maxDoblajeQty){
+                        this.doblajeQty = this.maxDoblajeQty;
+                }
+                    
+                    System.out.println("Escenario producido: " + this.doblajeQty);
+                } 
+                break;
+            case "plotwist":
+                if(this.plotwistQty < this.maxPlotwistQty){
+                    this.plotwistQty += PartFinish;
+                    if(this.plotwistQty > this.maxPlotwistQty){
+                        this.plotwistQty = this.maxPlotwistQty;
+                }
+                    
+                    System.out.println("Escenario producido: " + this.plotwistQty);
+                } 
+                break;
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 }
