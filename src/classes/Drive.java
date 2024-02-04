@@ -196,9 +196,9 @@ public class Drive {
     public int getCapUtility (boolean isCartoon){
         int total = 0;
         if(isCartoon){
-            total = (this.totalCapitulos * 30000) + (this.totalCapPlo * 650000);
+            total = (this.totalCapitulos * 300000) + (this.totalCapPlo * 650000);
         } else {
-            total = (this.totalCapitulos * 25000) + (this.totalCapPlo * 600000);
+            total = (this.totalCapitulos * 250000) + (this.totalCapPlo * 600000);
         }
         return total;
     }
