@@ -4,6 +4,8 @@
  */
 package classes;
 
+import Interfaces.DashBoard;
+
 /**
  *
  * @author PC
@@ -15,6 +17,9 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        DashBoard DB = new DashBoard();
+        DB.setLocationRelativeTo(null);
+        DB.setVisible(true);
     }
     
 }
