@@ -21,7 +21,13 @@ public class EstudioAnimacion extends Thread {
     public Semaphore mutex;
     public boolean isCartoon;
     public int entrega;
-    
+    public Configuracion confi = new Configuracion();
+    public int cantidadWorkers;
+    public Gerente gerente;
+    public Director director;
+    public int diasInit;
+    public int sueldoAcumu;
+    public int capituloTransmitido;
     
     
 }
