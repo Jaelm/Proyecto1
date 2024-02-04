@@ -25,6 +25,8 @@ public class Drive {
     public int contCapPlo;
     public int totalCapPlo;
     
+    
+    
     public Drive(int maxGuion, int maxEscenario, int maxAnimacion, int maxDoblaje, int maxPlotwist){
         this.maxGuionQty = maxGuion;
         this.maxEscenarioQty = maxEscenario;
@@ -105,11 +107,48 @@ public class Drive {
         }
     }
     
+    public boolean existeStock (boolean isCartoon){
+        if(isCartoon){
+            return(this.guionQty >= 1 && this.escenarioQty >= 2 && this.animacionQty >= 6 && this.doblajeQty >= 5);
+        }
+        return(this.guionQty >= 1 && this.escenarioQty >= 1 && this.animacionQty >= 2 && this.doblajeQty >= 4);
+    }
     
+    public boolean existeStockAcc (boolean isCartoon){
+        if(isCartoon){
+            return this.plotwistQty >= 1;
+        }
+        return this.plotwistQty >= 3;
+    }
     
+    public void restarDrive (boolean isCartoon, boolean conPlow){
+        if(isCartoon){
+            this.guionQty -= 1;
+            this.escenarioQty -= 2;
+            this.animacionQty -= 6;
+            this.doblajeQty -= 5;
+            if(conPlow){
+                this.plotwistQty -= 1;
+            }
+        } else {
+            this.guionQty -= 1;
+            this.escenarioQty -= 1;
+            this.animacionQty -= 2;
+            this.doblajeQty -= 4;
+            if(conPlow){
+                this.plotwistQty -= 3;
+        
+            }
+        }
+    }
     
-    
-    
-    
-    
+    public int getCapUtility (boolean isCartoon){
+        int total = 0;
+        if(isCartoon){
+            total = (this.totalCapitulos * 30000) + (this.totalCapPlo * 650000);
+        } else {
+            total = (this.totalCapitulos * 25000) + (this.totalCapPlo * 600000);
+        }
+        return total;
+    }
 }
