@@ -5,6 +5,8 @@
 package classes;
 
 import Interfaces.DashBoard;
+import productores.ProjectManager;
+import productores.Director;
 
 /**
  *
@@ -13,8 +15,8 @@ import Interfaces.DashBoard;
 public class Main {
 
     public static int[] valoresIniciales = Configuracion.leerDatosIniciales(); //valoresIniciales[0]:duracion dia, [1]:dias para entrega
-    public static EstudioAnimacion CartoonNetwork = new EstudioAnimacion("Cartoon NetWork", 13, valoresIniciales[0], valoresIniciales[1], true);
-    public static EstudioAnimacion DisneyChannel = new EstudioAnimacion("Disney Channel", 13, valoresIniciales[0], valoresIniciales[1], false);
+    public static EstudioAnimacion CartoonStudio = new EstudioAnimacion("Cartoon NetWork", 13, valoresIniciales[0], valoresIniciales[1], true);
+    public static EstudioAnimacion DisneyStudio = new EstudioAnimacion("Disney Channel", 13, valoresIniciales[0], valoresIniciales[1], false);
 
     /**
      * @param args the command line arguments
