@@ -52,7 +52,7 @@ public class Configuracion {
     }
 
     public static int[] leerDatosIniciales() {
-        String archivo = "";
+        String archivo = "src//classes//EntregaYDuracion.txt";
         String text = "";
         
         try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
