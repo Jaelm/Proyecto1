@@ -107,6 +107,57 @@ public class Drive {
         }
     }
     
+    public boolean tomarPart(boolean isCartoon){
+        if(isCartoon){
+            //revisa la cantidad de capitulos creados para ver si añade un Plotwist
+            if(this.contCapPlo == 3){
+                //revisa si hay cantidad de areas disponible para crear un capitulo
+                if(this.existeStock(isCartoon) && this.existeStockPlo(isCartoon)){
+                    this.restarDrive(isCartoon, true);
+                    this.contCapPlo = 0;
+                    this.totalCapPlo += 1;
+                    System.out.println("Creo un capitulo con Plotwist");
+                    int dinero = this.getCapUtility(isCartoon);
+                    return true;
+                }
+                return false;
+            } else {
+                if(this.existeStock(isCartoon)){
+                    this.restarDrive(isCartoon, false);
+                    this.contCapPlo += 1;
+                    this.totalCapitulos += 1;
+                    System.out.println("Creo un capitulo");
+                    return true;
+                }
+                return false;
+            }
+            
+        } else {
+            if(this.contCapPlo == 2){
+                //revisa si hay cantidad de areas disponible para crear un capitulo
+                if(this.existeStock(isCartoon) && this.existeStockPlo(isCartoon)){
+                    this.restarDrive(isCartoon, true);
+                    this.contCapPlo = 0;
+                    this.totalCapPlo += 1;
+                    System.out.println("Creo un capitulo con Plotwist");
+                    int dinero = this.getCapUtility(isCartoon);
+                    return true;
+                }
+                return false;
+            } else {
+                if(this.existeStock(isCartoon)){
+                    this.restarDrive(isCartoon, false);
+                    this.contCapPlo += 1;
+                    this.totalCapitulos += 1;
+                    System.out.println("Creo un capitulo");
+                    return true;
+                }
+                return false;
+        }
+        
+    }
+}
+    
     public boolean existeStock (boolean isCartoon){
         if(isCartoon){
             return(this.guionQty >= 1 && this.escenarioQty >= 2 && this.animacionQty >= 6 && this.doblajeQty >= 5);
@@ -114,7 +165,7 @@ public class Drive {
         return(this.guionQty >= 1 && this.escenarioQty >= 1 && this.animacionQty >= 2 && this.doblajeQty >= 4);
     }
     
-    public boolean existeStockAcc (boolean isCartoon){
+    public boolean existeStockPlo (boolean isCartoon){
         if(isCartoon){
             return this.plotwistQty >= 1;
         }
