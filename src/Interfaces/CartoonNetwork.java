@@ -4,8 +4,8 @@
  */
 package Interfaces;
 
-import Interfaces.DashBoard;
-import javax.swing.JFrame;
+
+import javax.swing.JOptionPane;
 
 
 /**
@@ -33,6 +33,59 @@ public class CartoonNetwork extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        AnimadorPersonajes = new javax.swing.JSpinner();
+        ActoresDoblaje = new javax.swing.JSpinner();
+        GuionistaPlotTwist = new javax.swing.JSpinner();
+        Ensambladores = new javax.swing.JSpinner();
+        ProjectManager = new javax.swing.JSpinner();
+        Guionistas = new javax.swing.JSpinner();
+        DisenadorEscenarios = new javax.swing.JSpinner();
+        Director1 = new javax.swing.JSpinner();
+        Actualizar = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        ProjectManagerEsta = new javax.swing.JTextField();
+        jLabel24 = new javax.swing.JLabel();
+        ProjectManagerEsta1 = new javax.swing.JTextField();
+        ProjectManagerEsta2 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        jLabel32 = new javax.swing.JLabel();
+        jLabel33 = new javax.swing.JLabel();
+        jLabel34 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        jLabel42 = new javax.swing.JLabel();
+        jLabel43 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -46,6 +99,267 @@ public class CartoonNetwork extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(10, 10, 110, 23);
 
+        jLabel1.setText("Empleados en Cartoon Network:");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(20, 50, 220, 16);
+
+        jLabel2.setText("Animador de personajes");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(20, 110, 160, 16);
+
+        jLabel3.setText("Actores de doblaje");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(20, 140, 130, 16);
+
+        jLabel4.setText("Guionista de PlotTwist");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(20, 170, 160, 16);
+
+        jLabel5.setText("Ensambladores");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(20, 200, 120, 16);
+
+        jLabel6.setText("Project Manager");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(20, 230, 110, 16);
+
+        jLabel7.setText("Director");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(20, 260, 120, 16);
+
+        jLabel9.setText("Guionistas");
+        jLabel9.setToolTipText("");
+        jLabel9.setName(""); // NOI18N
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(20, 290, 160, 20);
+
+        AnimadorPersonajes.setValue(1);
+        AnimadorPersonajes.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                AnimadorPersonajesStateChanged(evt);
+            }
+        });
+        getContentPane().add(AnimadorPersonajes);
+        AnimadorPersonajes.setBounds(180, 110, 64, 22);
+
+        ActoresDoblaje.setValue(1);
+        ActoresDoblaje.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ActoresDoblajeStateChanged(evt);
+            }
+        });
+        getContentPane().add(ActoresDoblaje);
+        ActoresDoblaje.setBounds(180, 140, 64, 22);
+
+        GuionistaPlotTwist.setValue(1);
+        GuionistaPlotTwist.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                GuionistaPlotTwistStateChanged(evt);
+            }
+        });
+        getContentPane().add(GuionistaPlotTwist);
+        GuionistaPlotTwist.setBounds(180, 170, 64, 22);
+
+        Ensambladores.setValue(1);
+        Ensambladores.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                EnsambladoresStateChanged(evt);
+            }
+        });
+        getContentPane().add(Ensambladores);
+        Ensambladores.setBounds(180, 200, 64, 22);
+
+        ProjectManager.setValue(1);
+        ProjectManager.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                ProjectManagerStateChanged(evt);
+            }
+        });
+        getContentPane().add(ProjectManager);
+        ProjectManager.setBounds(180, 230, 64, 22);
+
+        Guionistas.setValue(1);
+        Guionistas.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                GuionistasStateChanged(evt);
+            }
+        });
+        getContentPane().add(Guionistas);
+        Guionistas.setBounds(180, 290, 64, 22);
+
+        DisenadorEscenarios.setValue(1);
+        DisenadorEscenarios.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                DisenadorEscenariosStateChanged(evt);
+            }
+        });
+        getContentPane().add(DisenadorEscenarios);
+        DisenadorEscenarios.setBounds(180, 80, 64, 22);
+
+        Director1.setValue(1);
+        Director1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                Director1StateChanged(evt);
+            }
+        });
+        getContentPane().add(Director1);
+        Director1.setBounds(180, 260, 64, 20);
+
+        Actualizar.setText("Actualizar");
+        Actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Actualizar);
+        Actualizar.setBounds(280, 380, 110, 23);
+
+        jLabel11.setText("Dias para la entrega:");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(580, 80, 130, 16);
+
+        jLabel13.setText("Capitulos Producidos:");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(580, 120, 130, 16);
+
+        jLabel14.setText("Estandar:");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(580, 150, 60, 16);
+
+        jLabel15.setText("PlotTwist");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(580, 170, 60, 16);
+
+        jLabel16.setText("El Director esta:");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(340, 160, 140, 16);
+
+        jLabel17.setText("El Project Manager esta:");
+        getContentPane().add(jLabel17);
+        jLabel17.setBounds(340, 110, 140, 16);
+
+        jLabel18.setText("Animaciones");
+        getContentPane().add(jLabel18);
+        jLabel18.setBounds(380, 440, 80, 16);
+
+        jLabel19.setText("0");
+        getContentPane().add(jLabel19);
+        jLabel19.setBounds(260, 510, 20, 16);
+
+        jLabel20.setText("Total Descontado:");
+        getContentPane().add(jLabel20);
+        jLabel20.setBounds(340, 230, 140, 16);
+
+        jLabel21.setText("0");
+        getContentPane().add(jLabel21);
+        jLabel21.setBounds(470, 230, 20, 16);
+
+        jLabel22.setText("0");
+        getContentPane().add(jLabel22);
+        jLabel22.setBounds(700, 80, 20, 16);
+
+        jLabel23.setText("0");
+        getContentPane().add(jLabel23);
+        jLabel23.setBounds(640, 150, 20, 16);
+
+        ProjectManagerEsta.setText("jTextField1");
+        getContentPane().add(ProjectManagerEsta);
+        ProjectManagerEsta.setBounds(340, 180, 130, 22);
+
+        jLabel24.setText("0");
+        getContentPane().add(jLabel24);
+        jLabel24.setBounds(640, 170, 20, 16);
+
+        ProjectManagerEsta1.setText("jTextField1");
+        getContentPane().add(ProjectManagerEsta1);
+        ProjectManagerEsta1.setBounds(340, 130, 130, 22);
+
+        ProjectManagerEsta2.setText("jTextField1");
+        getContentPane().add(ProjectManagerEsta2);
+        ProjectManagerEsta2.setBounds(340, 180, 130, 22);
+
+        jLabel12.setText("Maximo:");
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(20, 510, 170, 16);
+
+        jLabel25.setText("Empleados Administrativos");
+        getContentPane().add(jLabel25);
+        jLabel25.setBounds(340, 80, 170, 16);
+
+        jLabel26.setText("Capitulos");
+        getContentPane().add(jLabel26);
+        jLabel26.setBounds(120, 410, 170, 16);
+
+        jLabel27.setText("Disponibles:");
+        getContentPane().add(jLabel27);
+        jLabel27.setBounds(10, 470, 100, 16);
+
+        jLabel28.setText("Diseñador de escenarios");
+        jLabel28.setToolTipText("");
+        jLabel28.setName(""); // NOI18N
+        getContentPane().add(jLabel28);
+        jLabel28.setBounds(20, 80, 160, 20);
+
+        jLabel29.setText("Faltas:");
+        getContentPane().add(jLabel29);
+        jLabel29.setBounds(340, 210, 50, 16);
+
+        jLabel30.setText("Escenario");
+        getContentPane().add(jLabel30);
+        jLabel30.setBounds(110, 440, 70, 16);
+
+        jLabel31.setText("Guiones");
+        getContentPane().add(jLabel31);
+        jLabel31.setBounds(180, 440, 50, 16);
+
+        jLabel32.setText("Doblajes");
+        getContentPane().add(jLabel32);
+        jLabel32.setBounds(250, 440, 50, 16);
+
+        jLabel33.setText("Plotwist");
+        getContentPane().add(jLabel33);
+        jLabel33.setBounds(310, 440, 50, 16);
+
+        jLabel34.setText("0");
+        getContentPane().add(jLabel34);
+        jLabel34.setBounds(390, 210, 20, 16);
+
+        jLabel35.setText("0");
+        getContentPane().add(jLabel35);
+        jLabel35.setBounds(190, 470, 20, 16);
+
+        jLabel36.setText("0");
+        getContentPane().add(jLabel36);
+        jLabel36.setBounds(260, 470, 20, 16);
+
+        jLabel37.setText("0");
+        getContentPane().add(jLabel37);
+        jLabel37.setBounds(320, 470, 20, 16);
+
+        jLabel38.setText("0");
+        getContentPane().add(jLabel38);
+        jLabel38.setBounds(410, 470, 20, 16);
+
+        jLabel39.setText("0");
+        getContentPane().add(jLabel39);
+        jLabel39.setBounds(190, 510, 20, 16);
+
+        jLabel40.setText("0");
+        getContentPane().add(jLabel40);
+        jLabel40.setBounds(120, 510, 20, 16);
+
+        jLabel41.setText("0");
+        getContentPane().add(jLabel41);
+        jLabel41.setBounds(320, 510, 20, 16);
+
+        jLabel42.setText("0");
+        getContentPane().add(jLabel42);
+        jLabel42.setBounds(410, 510, 20, 16);
+
+        jLabel43.setText("0");
+        getContentPane().add(jLabel43);
+        jLabel43.setBounds(120, 470, 20, 16);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -56,6 +370,119 @@ public class CartoonNetwork extends javax.swing.JFrame {
         DB.setLocationRelativeTo(null);
         DB.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void AnimadorPersonajesStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_AnimadorPersonajesStateChanged
+        // TODO add your handling code here:
+        int valorActual = (int) AnimadorPersonajes.getValue();
+        if (valorActual == 0){
+            JOptionPane.showMessageDialog(rootPane, "Cada estudio de animación debe contar en todo momento con un " + "trabajador de cada tipo como mínimo ");
+            AnimadorPersonajes.setValue(1);
+        }
+    }//GEN-LAST:event_AnimadorPersonajesStateChanged
+
+    private void ActoresDoblajeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ActoresDoblajeStateChanged
+        // TODO add your handling code here:
+        int valorActual = (int) ActoresDoblaje.getValue();
+        if (valorActual == 0){
+            JOptionPane.showMessageDialog(rootPane, "Cada estudio de animación debe contar en todo momento con un " + "trabajador de cada tipo como mínimo ");
+            ActoresDoblaje.setValue(1);
+        }
+    }//GEN-LAST:event_ActoresDoblajeStateChanged
+
+    private void GuionistaPlotTwistStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_GuionistaPlotTwistStateChanged
+        // TODO add your handling code here:
+        int valorActual = (int) GuionistaPlotTwist.getValue();
+        if (valorActual == 0){
+            JOptionPane.showMessageDialog(rootPane, "Cada estudio de animación debe contar en todo momento con un " + "trabajador de cada tipo como mínimo ");
+            GuionistaPlotTwist.setValue(1);
+        }
+    }//GEN-LAST:event_GuionistaPlotTwistStateChanged
+
+    private void EnsambladoresStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_EnsambladoresStateChanged
+        // TODO add your handling code here:
+        int valorActual = (int) Ensambladores.getValue();
+        if (valorActual == 0){
+            JOptionPane.showMessageDialog(rootPane, "Cada estudio de animación debe contar en todo momento con un " + "trabajador de cada tipo como mínimo ");
+            Ensambladores.setValue(1);
+        }
+    }//GEN-LAST:event_EnsambladoresStateChanged
+
+    private void ProjectManagerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ProjectManagerStateChanged
+        // TODO add your handling code here:
+        int valorActual = (int) ProjectManager.getValue();
+        if (valorActual == 0){
+            JOptionPane.showMessageDialog(rootPane, "Cada estudio de animación debe contar en todo momento con un " + "trabajador de cada tipo como mínimo ");
+            ProjectManager.setValue(1);
+        }
+    }//GEN-LAST:event_ProjectManagerStateChanged
+
+    private void GuionistasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_GuionistasStateChanged
+        // TODO add your handling code here:
+        int valorActual = (int) Guionistas.getValue();
+        if (valorActual == 0){
+            JOptionPane.showMessageDialog(rootPane, "Cada estudio de animación debe contar en todo momento con un " + "trabajador de cada tipo como mínimo ");
+            Guionistas.setValue(1);
+        }
+    }//GEN-LAST:event_GuionistasStateChanged
+
+    private void DisenadorEscenariosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_DisenadorEscenariosStateChanged
+        // TODO add your handling code here:
+        int valorActual = (int) DisenadorEscenarios.getValue();
+        if (valorActual == 0){
+            JOptionPane.showMessageDialog(rootPane, "Cada estudio de animación debe contar en todo momento con un " + "trabajador de cada tipo como mínimo ");
+            DisenadorEscenarios.setValue(1);
+        }
+    }//GEN-LAST:event_DisenadorEscenariosStateChanged
+
+    private void Director1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Director1StateChanged
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_Director1StateChanged
+
+    private void ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarActionPerformed
+        // TODO add your handling code here:
+        int NumeroTrabajadoresDisenadorEscenarios = (int) DisenadorEscenarios.getValue();
+        
+        int NumeroTrabajadoresAnimadorPersonajes = (int) AnimadorPersonajes.getValue();
+        
+        int NumeroActoresDoblaje = (int) ActoresDoblaje.getValue();
+        
+        int NumeroGuionistaPlotTwist = (int) GuionistaPlotTwist.getValue();
+        
+        int NumeroEnsambladores = (int) Ensambladores.getValue();
+        
+        int NumeroProjectManager = (int) ProjectManager.getValue();
+        
+        int NumeroDirector1 = (int) Director1.getValue();
+        
+        int NumeroGuionistas = (int) Guionistas.getValue();
+        
+        int[] valores = {
+            NumeroTrabajadoresDisenadorEscenarios,
+            NumeroTrabajadoresAnimadorPersonajes,
+            NumeroActoresDoblaje,
+            NumeroGuionistaPlotTwist,
+            NumeroEnsambladores,
+            NumeroProjectManager,
+            NumeroDirector1,
+            NumeroGuionistas
+        };
+
+        // Sumar los valores en el array usando un bucle
+        int suma = 0;
+        for (int valor : valores) {
+            suma += valor;
+        }
+        
+        //Ver el total de la suma:
+        //JOptionPane.showMessageDialog(rootPane, "La suma total es: " + suma);
+        
+        if (suma > 13){
+            JOptionPane.showMessageDialog(rootPane, "No puden haber mas de 13 trabajadores");
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "En marcha !");
+        }
+    }//GEN-LAST:event_ActualizarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,6 +520,59 @@ public class CartoonNetwork extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JSpinner ActoresDoblaje;
+    private javax.swing.JButton Actualizar;
+    private javax.swing.JSpinner AnimadorPersonajes;
+    private javax.swing.JSpinner Director1;
+    private javax.swing.JSpinner DisenadorEscenarios;
+    private javax.swing.JSpinner Ensambladores;
+    private javax.swing.JSpinner GuionistaPlotTwist;
+    private javax.swing.JSpinner Guionistas;
+    private javax.swing.JSpinner ProjectManager;
+    private javax.swing.JTextField ProjectManagerEsta;
+    private javax.swing.JTextField ProjectManagerEsta1;
+    private javax.swing.JTextField ProjectManagerEsta2;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
+    private javax.swing.JLabel jLabel32;
+    private javax.swing.JLabel jLabel33;
+    private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
+    private javax.swing.JLabel jLabel43;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
