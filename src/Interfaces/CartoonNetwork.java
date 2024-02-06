@@ -6,6 +6,7 @@ package Interfaces;
 
 
 import javax.swing.JOptionPane;
+import classes.Drive;
 
 
 /**
@@ -17,11 +18,24 @@ public class CartoonNetwork extends javax.swing.JFrame {
     /**
      * Creates new form CartoonNetwork
      */
+    
+    
+    
+    
     public CartoonNetwork() {
         initComponents();
         setTitle("Cartoon Network");
         setSize(1024, 683);
+        Drive instancia = new Drive(ALLBITS, MOVE_CURSOR, FRAMEBITS, ALLBITS, PROPERTIES);
+        // Obtener el total de capítulos
+        int totalCapitulos = instancia.getTotalCap();
+        CapitulosProducidos.setText(String.valueOf(totalCapitulos));
+        
+
     }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -86,6 +100,7 @@ public class CartoonNetwork extends javax.swing.JFrame {
         jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jLabel43 = new javax.swing.JLabel();
+        CapitulosProducidos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -360,6 +375,10 @@ public class CartoonNetwork extends javax.swing.JFrame {
         getContentPane().add(jLabel43);
         jLabel43.setBounds(120, 470, 20, 16);
 
+        CapitulosProducidos.setText("0");
+        getContentPane().add(CapitulosProducidos);
+        CapitulosProducidos.setBounds(710, 120, 70, 16);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -484,6 +503,12 @@ public class CartoonNetwork extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ActualizarActionPerformed
 
+    
+    
+
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -523,6 +548,7 @@ public class CartoonNetwork extends javax.swing.JFrame {
     private javax.swing.JSpinner ActoresDoblaje;
     private javax.swing.JButton Actualizar;
     private javax.swing.JSpinner AnimadorPersonajes;
+    private javax.swing.JLabel CapitulosProducidos;
     private javax.swing.JSpinner Director1;
     private javax.swing.JSpinner DisenadorEscenarios;
     private javax.swing.JSpinner Ensambladores;

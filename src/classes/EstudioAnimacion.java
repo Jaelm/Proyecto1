@@ -9,6 +9,7 @@ import productores.Director;
 import productores.ProjectManager;
 import productores.TipoWorker;
 import productores.Worker;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -101,6 +102,8 @@ public class EstudioAnimacion extends Thread {
         this.sueldoAcumu += total;
         return (total);
     }
+    
+    
     public void setDiasInicio(int dias){
         this.diasInit = dias;
     }
@@ -216,5 +219,4 @@ public class EstudioAnimacion extends Thread {
     public ProjectManager getGerente(){
         return this.manager;
     }
-    
 }
