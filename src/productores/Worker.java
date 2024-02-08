@@ -8,10 +8,6 @@ import classes.EstudioAnimacion;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author PC
- */
 public class Worker extends Thread{
     private double sueldoTotal;
     private double sueldoPorHora;

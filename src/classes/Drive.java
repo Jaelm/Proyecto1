@@ -4,10 +4,6 @@
  */
 package classes;
 
-/**
- *
- * @author PC
- */
 public class Drive {
     public int guionQty;
     public int escenarioQty;

@@ -4,10 +4,6 @@
  */
 package productores;
 
-/**
- *
- * @author PC
- */
 public class TipoWorker {
     static public String guion = "guion";
     static public String escenario = "escenario";

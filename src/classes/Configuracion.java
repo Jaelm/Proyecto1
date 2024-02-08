@@ -13,10 +13,6 @@ import java.util.HashMap;
 import java.util.Map;
 import productores.TipoWorker;
 
-/**
- *
- * @author PC
- */
 public class Configuracion {
     
     private Map<String, Integer> parametros;
@@ -114,3 +110,4 @@ public class Configuracion {
         }
     }
 }
+

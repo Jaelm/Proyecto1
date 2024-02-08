@@ -1,16 +1,15 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
 package classes;
 
-import Interfaces.DashBoard;
+import productores.Gerente;
+import productores.*;
 
-/**
- *
- * @author PC
- */
 public class Main {
+    
 
     public static int[] valoresIniciales = Configuracion.leerDatosIniciales(); //valoresIniciales[0]:duracion dia, [1]:dias para entrega
     public static EstudioAnimacion CartoonStudio = new EstudioAnimacion("Cartoon NetWork", 13, valoresIniciales[0], valoresIniciales[1], true);
@@ -20,10 +19,12 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here       
-        DashBoard DB = new DashBoard();
-        DB.setLocationRelativeTo(null);
-        DB.setVisible(true);
+
+        
+        //Aqui tambien pilas que no este al revez
+        dashboard.GlobalUI.getMainUI().getLGdashboard1().setLamboPlant(CartoonStudio);
+        dashboard.GlobalUI.getMainUI().getRrDashboard1().setRollsPlant(DisneyStudio);
+        dashboard.GlobalUI.openMainPage();
     }
     
 }

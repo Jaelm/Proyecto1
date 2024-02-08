@@ -8,10 +8,7 @@ import classes.EstudioAnimacion;
 import classes.Main;
 import java.util.Random;
 
-/**
- *
- * @author PC
- */
+
 public class Director extends Thread {
     private double TotalSueldo;
     private double sueldoxHora;
@@ -164,6 +161,45 @@ public class Director extends Thread {
             
         }
     }
+    
+    public String verificarActividadManager2() throws InterruptedException {
+    String resultado = "";
+    System.out.println("Director supervisando al Project Manager");
+
+    if (estudio.manager.estaViendoOnePiece()) {
+        // El gerente está viendo carreras
+        resultado = "Falta al manager por ver One Piece. Se descontarán $100 de su sueldo.";
+        System.out.println(resultado);
+        faltas++;
+        
+        if(isCartoon){
+            
+            int sal = this.calcSalarioRestado(faltas);
+            
+        }else{
+            
+            int sal = this.calcSalarioRestado(faltas);
+            
+        }
+//            
+    } else {
+        // El gerente está trabajando
+        resultado = "El Project Manager está trabajando.";
+        System.out.println(resultado);
+    }
+    Thread.sleep(estudio.dayDurationMs / 57);//sleep 25 minutos
+    //cambio a trabajando
+    if(isCartoon){
+        
+    }else{
+        
+    }
+
+    return resultado;
+}
+
+    
+    
 
     
     

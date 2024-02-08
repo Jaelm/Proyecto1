@@ -11,10 +11,6 @@ import productores.TipoWorker;
 import productores.Worker;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author PC
- */
 public class EstudioAnimacion extends Thread {
     private String name;
     public int maxWorkerQty;
@@ -220,3 +216,4 @@ public class EstudioAnimacion extends Thread {
         return this.manager;
     }
 }
+

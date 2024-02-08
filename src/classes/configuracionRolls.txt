@@ -1,0 +1,6 @@
+escenario=0
+actor=1
+animacion=1
+guion=1
+plotwist=1
+ensamblador=1

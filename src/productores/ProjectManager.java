@@ -8,10 +8,6 @@ import classes.EstudioAnimacion;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author PC
- */
 public class ProjectManager extends Thread{
     
     private double totalSueldo;
@@ -64,6 +60,9 @@ public class ProjectManager extends Thread{
     public int getDaysDeadline() {
         return estudio.entrega;
     }
+    
+    
+    
 
     public void iniciarNuevoDia() {
         diasTranscu++;
