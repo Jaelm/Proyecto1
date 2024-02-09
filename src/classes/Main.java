@@ -5,7 +5,6 @@
  */
 package classes;
 
-import productores.Gerente;
 import productores.*;
 
 public class Main {
@@ -22,8 +21,8 @@ public class Main {
 
         
         //Aqui tambien pilas que no este al revez
-        dashboard.GlobalUI.getMainUI().getLGdashboard1().setLamboPlant(CartoonStudio);
-        dashboard.GlobalUI.getMainUI().getRrDashboard1().setRollsPlant(DisneyStudio);
+        dashboard.GlobalUI.getMainUI().getCNdashboard1().setCartoonNetwork(CartoonStudio);
+        dashboard.GlobalUI.getMainUI().getDNDashboard1().setDisneyChannel(DisneyStudio);
         dashboard.GlobalUI.openMainPage();
     }
     

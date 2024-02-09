@@ -11,9 +11,7 @@ import productores.TipoWorker;
 
 
 public class CN_Dashboard extends javax.swing.JPanel {
-    EstudioAnimacion LamboPlant;
-//    public static int[] valoresIniciales =  Configuracion.leerDatosIniciales();
-//    VehiclePlant LamboPlant = new VehiclePlant("Lamborghini", 11, valoresIniciales[0], valoresIniciales[1], true);
+    EstudioAnimacion CartoonNetwork;
     
     /**
      * Creates new form a
@@ -22,56 +20,56 @@ public class CN_Dashboard extends javax.swing.JPanel {
         initComponents();
     }
     
-    public void setLamboPlant(EstudioAnimacion LamboPlant){
-        this.LamboPlant = LamboPlant;
+    public void setCartoonNetwork(EstudioAnimacion CartoonNetwork){
+        this.CartoonNetwork = CartoonNetwork;
         setWorkersSpinners();
         setWorkersLeft();
-        GlobalUI.getMainUI().getMainDashboard().getDeadlineSpinner().setValue(LamboPlant.entrega);
+        GlobalUI.getMainUI().getMainDashboard().getDeadlineSpinner().setValue(CartoonNetwork.entrega);
         //this.DeadlineSpinner.setValue();
     }
            
     public void setWorkersLeft(){
-        int cantidadActual = Functions.calcWorkersQty(LamboPlant.emplxDep);
-        int restan = LamboPlant.maxWorkerQty - cantidadActual;
+        int cantidadActual = Functions.calcWorkersQty(CartoonNetwork.emplxDep);
+        int restan = CartoonNetwork.maxWorkerQty - cantidadActual;
         this.empleadosDispo.setText(Integer.toString(restan));
     }
     
     public void setWorkersSpinners(){
-        this.qtyWChasis.setValue(LamboPlant.emplxDep[0]);
-        this.qtyWCarroceria.setValue(LamboPlant.emplxDep[1]);
-        this.qtyWMotor.setValue(LamboPlant.emplxDep[2]);
-        this.qtyWAcc.setValue(LamboPlant.emplxDep[3]);
-        this.qtyWRuedas.setValue(LamboPlant.emplxDep[4]);
-        this.qtyWEnsamblador.setValue(LamboPlant.emplxDep[5]);
+        this.qtyWGuion.setValue(CartoonNetwork.emplxDep[0]);
+        this.qtyWAnimacion.setValue(CartoonNetwork.emplxDep[1]);
+        this.qtyWDoblaje.setValue(CartoonNetwork.emplxDep[2]);
+        this.qtyWPlo.setValue(CartoonNetwork.emplxDep[3]);
+        this.qtyWEscenarios.setValue(CartoonNetwork.emplxDep[4]);
+        this.qtyWEnsamblador.setValue(CartoonNetwork.emplxDep[5]);
     }
     
-    public void setChasisQtyLabel(int num){
+    public void setGuionQtyLabel(int num){
         String cant = Integer.toString(num);
-        this.qtyChasis.setText(cant);
+        this.qtyGuion.setText(cant);
     }
-    public void setCarrQtyLabel(int num){
+    public void setAnimQtyLabel(int num){
         String cant = Integer.toString(num);
-        this.qtyCarroceria.setText(cant);
+        this.qtyAnimacion.setText(cant);
     }
-    public void setMotorQtyLabel(int num){
+    public void setDoblajeQtyLabel(int num){
         String cant = Integer.toString(num);
-        this.qtyMotores.setText(cant);
+        this.qtyDoblaje.setText(cant);
     }
-    public void setRuedasQtyLabel(int num){
+    public void setEsceneriosQtyLabel(int num){
         String cant = Integer.toString(num);
-        this.qtyRuedas.setText(cant);
+        this.qtyEscenarios.setText(cant);
     }
-    public void setAccQtyLabel(int num){
+    public void setPloQtyLabel(int num){
         String cant = Integer.toString(num);
-        this.qtyAcc.setText(cant);
+        this.qtyPlo.setText(cant);
     }
-    public void setQtyCarrosProd(int num){
+    public void setQtyCapEmitidos(int num){
         String cant = Integer.toString(num);
-        this.qtyCarrosProducidos.setText(cant);
+        this.qtyCapEmitidos.setText(cant);
     }
-    public void setQtyCarrosAccProd(int num){
+    public void setQtyCapPloEmitidos(int num){
         String cant = Integer.toString(num);
-        this.qtyCarrosAccProducidos.setText(cant);
+        this.qtyCapPloEmitidos.setText(cant);
     }
     public void setFaltasLabel(int num){
         String cant = Integer.toString(num);
@@ -80,7 +78,7 @@ public class CN_Dashboard extends javax.swing.JPanel {
     public void setDirectorAccion(String accion){
         this.directorAccion.setText(accion);
     }
-    public void setGerenteAccion(String accion){
+    public void setManagerAccion(String accion){
         this.gerenteAccion.setText(accion);
     }
     public void setDeadlineLabel(int num){
@@ -98,22 +96,22 @@ public class CN_Dashboard extends javax.swing.JPanel {
     public DashboardInfo getDashboardInfo(){
         return this.dashboardInfo1;
     }
-    public void setCarrosVendidos(int num) {
+    public void setCapTransmitidos(int num) {
         String cant = Integer.toString(num);
         //this.carrosVendidos.setText(cant);
     }
-    public void setValoresAlmacen(int chasis, int carr, int motor, int ruedas, int acc){
-        String newChasis = Integer.toString(chasis);
-        String newCarr = Integer.toString(carr);
-        String newMotor = Integer.toString(motor);
-        String newRuedas = Integer.toString(ruedas);
-        String newAcc = Integer.toString(acc);
+    public void setValoresDrive(int guion, int escenario, int animacion, int doblaje, int plo){
+        String newGuion = Integer.toString(guion);
+        String newAnimacion = Integer.toString(animacion);
+        String newDoblaje = Integer.toString(doblaje);
+        String newEscenarios = Integer.toString(escenario);
+        String newPlo = Integer.toString(plo);
         
-        this.qtyChasis.setText(newChasis);
-        this.qtyCarroceria.setText(newCarr);
-        this.qtyMotores.setText(newMotor);
-        this.qtyRuedas.setText(newRuedas);
-        this.qtyAcc.setText(newAcc);
+        this.qtyGuion.setText(newGuion);
+        this.qtyAnimacion.setText(newAnimacion);
+        this.qtyDoblaje.setText(newDoblaje);
+        this.qtyEscenarios.setText(newEscenarios);
+        this.qtyPlo.setText(newPlo);
     }
 
     /**
@@ -125,16 +123,16 @@ public class CN_Dashboard extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        qtyWChasis = new javax.swing.JSpinner();
-        workerChasis = new javax.swing.JLabel();
-        workerCarroceria = new javax.swing.JLabel();
-        qtyWMotor = new javax.swing.JSpinner();
-        workerMotor = new javax.swing.JLabel();
-        qtyWCarroceria = new javax.swing.JSpinner();
-        workerRuedas = new javax.swing.JLabel();
-        qtyWRuedas = new javax.swing.JSpinner();
-        workerAcc = new javax.swing.JLabel();
-        qtyWAcc = new javax.swing.JSpinner();
+        qtyWGuion = new javax.swing.JSpinner();
+        workerGuion = new javax.swing.JLabel();
+        workerAnimacion = new javax.swing.JLabel();
+        qtyWDoblaje = new javax.swing.JSpinner();
+        workerDoblaje = new javax.swing.JLabel();
+        qtyWAnimacion = new javax.swing.JSpinner();
+        workerEscenarios = new javax.swing.JLabel();
+        qtyWEscenarios = new javax.swing.JSpinner();
+        workerPlo = new javax.swing.JLabel();
+        qtyWPlo = new javax.swing.JSpinner();
         workerEnsamblador = new javax.swing.JLabel();
         qtyWEnsamblador = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
@@ -153,21 +151,21 @@ public class CN_Dashboard extends javax.swing.JPanel {
         jLabel21 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        qtyChasis = new javax.swing.JLabel();
-        qtyCarroceria = new javax.swing.JLabel();
-        qtyMotores = new javax.swing.JLabel();
-        qtyRuedas = new javax.swing.JLabel();
-        qtyAcc = new javax.swing.JLabel();
+        qtyGuion = new javax.swing.JLabel();
+        qtyAnimacion = new javax.swing.JLabel();
+        qtyDoblaje = new javax.swing.JLabel();
+        qtyEscenarios = new javax.swing.JLabel();
+        qtyPlo = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         empleadosDispo = new javax.swing.JLabel();
-        qtyCarrosProducidos = new javax.swing.JLabel();
+        qtyCapEmitidos = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        qtyCarrosAccProducidos = new javax.swing.JLabel();
+        qtyCapPloEmitidos = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         faltasLabel = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
@@ -175,70 +173,66 @@ public class CN_Dashboard extends javax.swing.JPanel {
         jLabel17 = new javax.swing.JLabel();
         sueldoDescontado = new javax.swing.JLabel();
         dashboardInfo1 = new dashboard.DashboardInfo();
-        workerEnsamblador1 = new javax.swing.JLabel();
-        workerEnsamblador2 = new javax.swing.JLabel();
-        qtyWEnsamblador1 = new javax.swing.JSpinner();
-        qtyWEnsamblador2 = new javax.swing.JSpinner();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        qtyWChasis.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        qtyWChasis.addChangeListener(new javax.swing.event.ChangeListener() {
+        qtyWGuion.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        qtyWGuion.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                qtyWChasisStateChanged(evt);
+                qtyWGuionStateChanged(evt);
             }
         });
-        add(qtyWChasis, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, 30));
+        add(qtyWGuion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 110, -1, 30));
 
-        workerChasis.setText("Diseñador de escenarios:");
-        add(workerChasis, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 30));
+        workerGuion.setText("Diseñador de Guiones");
+        add(workerGuion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 30));
 
-        workerCarroceria.setText("Animador de Personajes");
-        add(workerCarroceria, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 30));
+        workerAnimacion.setText("Animador de Personajes");
+        add(workerAnimacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 30));
 
-        qtyWMotor.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        qtyWMotor.addChangeListener(new javax.swing.event.ChangeListener() {
+        qtyWDoblaje.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        qtyWDoblaje.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                qtyWMotorStateChanged(evt);
+                qtyWDoblajeStateChanged(evt);
             }
         });
-        add(qtyWMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, 30));
+        add(qtyWDoblaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, 30));
 
-        workerMotor.setText("Actores de Doblaje");
-        add(workerMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, -1, 30));
+        workerDoblaje.setText("Actores de Doblaje");
+        add(workerDoblaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, 30));
 
-        qtyWCarroceria.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        qtyWCarroceria.addChangeListener(new javax.swing.event.ChangeListener() {
+        qtyWAnimacion.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        qtyWAnimacion.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                qtyWCarroceriaStateChanged(evt);
+                qtyWAnimacionStateChanged(evt);
             }
         });
-        add(qtyWCarroceria, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, 30));
+        add(qtyWAnimacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, -1, 30));
 
-        workerRuedas.setText("Guionista de PlotTwist");
-        add(workerRuedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, 30));
+        workerEscenarios.setText("Diseñador de Escenarios");
+        add(workerEscenarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, 30));
 
-        qtyWRuedas.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        qtyWRuedas.addChangeListener(new javax.swing.event.ChangeListener() {
+        qtyWEscenarios.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        qtyWEscenarios.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                qtyWRuedasStateChanged(evt);
+                qtyWEscenariosStateChanged(evt);
             }
         });
-        add(qtyWRuedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 230, -1, 30));
+        add(qtyWEscenarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 150, -1, 30));
 
-        workerAcc.setText("Ensambladores");
-        add(workerAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, 30));
+        workerPlo.setText("Guionista de Plotwist");
+        add(workerPlo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, 30));
 
-        qtyWAcc.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        qtyWAcc.addChangeListener(new javax.swing.event.ChangeListener() {
+        qtyWPlo.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        qtyWPlo.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                qtyWAccStateChanged(evt);
+                qtyWPloStateChanged(evt);
             }
         });
-        add(qtyWAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, 30));
+        add(qtyWPlo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, 30));
 
-        workerEnsamblador.setText("Director");
-        add(workerEnsamblador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, 30));
+        workerEnsamblador.setText("Emsamblador(es)");
+        add(workerEnsamblador, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 30));
 
         qtyWEnsamblador.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
         qtyWEnsamblador.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -246,7 +240,7 @@ public class CN_Dashboard extends javax.swing.JPanel {
                 qtyWEnsambladorStateChanged(evt);
             }
         });
-        add(qtyWEnsamblador, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 390, -1, 30));
+        add(qtyWEnsamblador, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, 30));
 
         jLabel7.setFont(new java.awt.Font("Liberation Sans", 0, 30)); // NOI18N
         jLabel7.setText("Capitulos");
@@ -254,23 +248,23 @@ public class CN_Dashboard extends javax.swing.JPanel {
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Animaciones");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 470, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel9.setText("Escenario");
-        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
+        add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel10.setText("Guiones");
-        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, -1, -1));
+        add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 470, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel11.setText("Doblajes");
-        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 470, -1, -1));
+        add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 470, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel12.setText("Plotwist");
-        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 470, -1, -1));
+        add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Liberation Sans", 0, 20)); // NOI18N
         jLabel14.setText("Dias para la entrega:");
@@ -324,54 +318,54 @@ public class CN_Dashboard extends javax.swing.JPanel {
         jLabel2.setText("Disponible");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 500, -1, -1));
 
-        qtyChasis.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        qtyChasis.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        qtyChasis.setText("0");
-        add(qtyChasis, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, 30, -1));
+        qtyGuion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        qtyGuion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        qtyGuion.setText("0");
+        add(qtyGuion, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 500, 30, -1));
 
-        qtyCarroceria.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        qtyCarroceria.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        qtyCarroceria.setText("0");
-        add(qtyCarroceria, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 30, -1));
+        qtyAnimacion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        qtyAnimacion.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        qtyAnimacion.setText("0");
+        add(qtyAnimacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 500, 30, -1));
 
-        qtyMotores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        qtyMotores.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        qtyMotores.setText("0");
-        add(qtyMotores, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 500, 40, -1));
+        qtyDoblaje.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        qtyDoblaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        qtyDoblaje.setText("0");
+        add(qtyDoblaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 500, 40, -1));
 
-        qtyRuedas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        qtyRuedas.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        qtyRuedas.setText("0");
-        add(qtyRuedas, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 500, 30, -1));
+        qtyEscenarios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        qtyEscenarios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        qtyEscenarios.setText("0");
+        add(qtyEscenarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 500, 30, -1));
 
-        qtyAcc.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        qtyAcc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        qtyAcc.setText("0");
-        add(qtyAcc, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 30, -1));
+        qtyPlo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        qtyPlo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        qtyPlo.setText("0");
+        add(qtyPlo, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 500, 30, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("20");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, 30, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, 30, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("25");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 540, 30, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 540, 30, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("35");
-        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 540, 40, -1));
+        jLabel5.setText("55");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 540, 40, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("10");
-        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 540, 30, -1));
+        jLabel6.setText("35");
+        add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 540, 30, -1));
 
         jLabel24.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel24.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel24.setText("55");
+        jLabel24.setText("10");
         add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 540, 30, -1));
 
         empleadosDispo.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -379,9 +373,9 @@ public class CN_Dashboard extends javax.swing.JPanel {
         empleadosDispo.setText("0");
         add(empleadosDispo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 80, 30, -1));
 
-        qtyCarrosProducidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        qtyCarrosProducidos.setText("0");
-        add(qtyCarrosProducidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 40, 20));
+        qtyCapEmitidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        qtyCapEmitidos.setText("0");
+        add(qtyCapEmitidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, 40, 20));
 
         jLabel25.setFont(new java.awt.Font("Liberation Sans", 1, 14)); // NOI18N
         jLabel25.setText("Plotwist");
@@ -391,9 +385,9 @@ public class CN_Dashboard extends javax.swing.JPanel {
         jLabel26.setText("Estandar:");
         add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 160, 90, 20));
 
-        qtyCarrosAccProducidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        qtyCarrosAccProducidos.setText("0");
-        add(qtyCarrosAccProducidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, 40, 30));
+        qtyCapPloEmitidos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        qtyCapPloEmitidos.setText("0");
+        add(qtyCapPloEmitidos, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 180, 40, 30));
 
         jLabel27.setFont(new java.awt.Font("Segoe UI", 0, 15)); // NOI18N
         jLabel27.setText("Faltas:");
@@ -419,80 +413,58 @@ public class CN_Dashboard extends javax.swing.JPanel {
         sueldoDescontado.setText("0");
         add(sueldoDescontado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 90, -1));
         add(dashboardInfo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 360, 220));
-
-        workerEnsamblador1.setText("Project Manager");
-        add(workerEnsamblador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, 30));
-
-        workerEnsamblador2.setText("Guionista");
-        add(workerEnsamblador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, 30));
-
-        qtyWEnsamblador1.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        qtyWEnsamblador1.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                qtyWEnsamblador1StateChanged(evt);
-            }
-        });
-        add(qtyWEnsamblador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 350, -1, 30));
-
-        qtyWEnsamblador2.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
-        qtyWEnsamblador2.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                qtyWEnsamblador2StateChanged(evt);
-            }
-        });
-        add(qtyWEnsamblador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, -1, 30));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void qtyWChasisStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWChasisStateChanged
+    private void qtyWGuionStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWGuionStateChanged
         // TODO add your handling code here:
-        int valor = Integer.parseInt(this.qtyWChasis.getValue().toString());
+        int valor = Integer.parseInt(this.qtyWGuion.getValue().toString());
         // validar valor para ver si no excede limite de workers
-        valor = Functions.validarCantEmpl(LamboPlant, TipoWorker.guion, valor);
-        this.qtyWChasis.setValue(valor);
+        valor = Functions.validarCantEmpl(CartoonNetwork, TipoWorker.guion, valor);
+        this.qtyWGuion.setValue(valor);
         this.setWorkersLeft();
-    }//GEN-LAST:event_qtyWChasisStateChanged
+    }//GEN-LAST:event_qtyWGuionStateChanged
 
-    private void qtyWMotorStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWMotorStateChanged
+    private void qtyWDoblajeStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWDoblajeStateChanged
         // TODO add your handling code here:
-        int valor = Integer.parseInt(this.qtyWMotor.getValue().toString());
+        int valor = Integer.parseInt(this.qtyWDoblaje.getValue().toString());
         // validar valor para ver si no excede limite de workers
-        valor = Functions.validarCantEmpl(LamboPlant, TipoWorker.escenario, valor);
-        this.qtyWMotor.setValue(valor);
+        valor = Functions.validarCantEmpl(CartoonNetwork, TipoWorker.escenario, valor);
+        this.qtyWDoblaje.setValue(valor);
         this.setWorkersLeft();
-    }//GEN-LAST:event_qtyWMotorStateChanged
+    }//GEN-LAST:event_qtyWDoblajeStateChanged
 
-    private void qtyWCarroceriaStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWCarroceriaStateChanged
+    private void qtyWAnimacionStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWAnimacionStateChanged
         // TODO add your handling code here:
-        int valor = Integer.parseInt(this.qtyWCarroceria.getValue().toString());
+        int valor = Integer.parseInt(this.qtyWAnimacion.getValue().toString());
         // validar valor para ver si no excede limite de workers
-        valor = Functions.validarCantEmpl(LamboPlant, TipoWorker.animador, valor);
-        this.qtyWCarroceria.setValue(valor);
+        valor = Functions.validarCantEmpl(CartoonNetwork, TipoWorker.animador, valor);
+        this.qtyWAnimacion.setValue(valor);
         this.setWorkersLeft();
-    }//GEN-LAST:event_qtyWCarroceriaStateChanged
+    }//GEN-LAST:event_qtyWAnimacionStateChanged
 
-    private void qtyWRuedasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWRuedasStateChanged
+    private void qtyWEscenariosStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWEscenariosStateChanged
         // TODO add your handling code here:
-        int valor = Integer.parseInt(this.qtyWRuedas.getValue().toString());
+        int valor = Integer.parseInt(this.qtyWEscenarios.getValue().toString());
         // validar valor para ver si no excede limite de workers
-        valor = Functions.validarCantEmpl(LamboPlant, TipoWorker.actor, valor);
-        this.qtyWRuedas.setValue(valor);
+        valor = Functions.validarCantEmpl(CartoonNetwork, TipoWorker.actor, valor);
+        this.qtyWEscenarios.setValue(valor);
         this.setWorkersLeft();
-    }//GEN-LAST:event_qtyWRuedasStateChanged
+    }//GEN-LAST:event_qtyWEscenariosStateChanged
 
-    private void qtyWAccStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWAccStateChanged
+    private void qtyWPloStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWPloStateChanged
         // TODO add your handling code here:
-        int valor = Integer.parseInt(this.qtyWAcc.getValue().toString());
+        int valor = Integer.parseInt(this.qtyWPlo.getValue().toString());
         // validar valor para ver si no excede limite de workers
-        valor = Functions.validarCantEmpl(LamboPlant, TipoWorker.plotwist, valor);
-        this.qtyWAcc.setValue(valor);
+        valor = Functions.validarCantEmpl(CartoonNetwork, TipoWorker.plotwist, valor);
+        this.qtyWPlo.setValue(valor);
         this.setWorkersLeft();
-    }//GEN-LAST:event_qtyWAccStateChanged
+    }//GEN-LAST:event_qtyWPloStateChanged
 
     private void qtyWEnsambladorStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWEnsambladorStateChanged
         // TODO add your handling code here:
         int valor = Integer.parseInt(this.qtyWEnsamblador.getValue().toString());
         // validar valor para ver si no excede limite de workers
-        valor = Functions.validarCantEmpl(LamboPlant, TipoWorker.ensamblador, valor);
+        valor = Functions.validarCantEmpl(CartoonNetwork, TipoWorker.ensamblador, valor);
         this.qtyWEnsamblador.setValue(valor);
         this.setWorkersLeft();
     }//GEN-LAST:event_qtyWEnsambladorStateChanged
@@ -504,14 +476,6 @@ public class CN_Dashboard extends javax.swing.JPanel {
     private void gerenteAccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gerenteAccionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_gerenteAccionActionPerformed
-
-    private void qtyWEnsamblador1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWEnsamblador1StateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qtyWEnsamblador1StateChanged
-
-    private void qtyWEnsamblador2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_qtyWEnsamblador2StateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_qtyWEnsamblador2StateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -545,46 +509,42 @@ public class CN_Dashboard extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel qtyAcc;
-    private javax.swing.JLabel qtyCarroceria;
-    private javax.swing.JLabel qtyCarrosAccProducidos;
-    private javax.swing.JLabel qtyCarrosProducidos;
-    private javax.swing.JLabel qtyChasis;
-    private javax.swing.JLabel qtyMotores;
-    private javax.swing.JLabel qtyRuedas;
-    private javax.swing.JSpinner qtyWAcc;
-    private javax.swing.JSpinner qtyWCarroceria;
-    private javax.swing.JSpinner qtyWChasis;
+    private javax.swing.JLabel qtyAnimacion;
+    private javax.swing.JLabel qtyCapEmitidos;
+    private javax.swing.JLabel qtyCapPloEmitidos;
+    private javax.swing.JLabel qtyDoblaje;
+    private javax.swing.JLabel qtyEscenarios;
+    private javax.swing.JLabel qtyGuion;
+    private javax.swing.JLabel qtyPlo;
+    private javax.swing.JSpinner qtyWAnimacion;
+    private javax.swing.JSpinner qtyWDoblaje;
     private javax.swing.JSpinner qtyWEnsamblador;
-    private javax.swing.JSpinner qtyWEnsamblador1;
-    private javax.swing.JSpinner qtyWEnsamblador2;
-    private javax.swing.JSpinner qtyWMotor;
-    private javax.swing.JSpinner qtyWRuedas;
+    private javax.swing.JSpinner qtyWEscenarios;
+    private javax.swing.JSpinner qtyWGuion;
+    private javax.swing.JSpinner qtyWPlo;
     private javax.swing.JLabel sueldoDescontado;
-    private javax.swing.JLabel workerAcc;
-    private javax.swing.JLabel workerCarroceria;
-    private javax.swing.JLabel workerChasis;
+    private javax.swing.JLabel workerAnimacion;
+    private javax.swing.JLabel workerDoblaje;
     private javax.swing.JLabel workerEnsamblador;
-    private javax.swing.JLabel workerEnsamblador1;
-    private javax.swing.JLabel workerEnsamblador2;
-    private javax.swing.JLabel workerMotor;
-    private javax.swing.JLabel workerRuedas;
+    private javax.swing.JLabel workerEscenarios;
+    private javax.swing.JLabel workerGuion;
+    private javax.swing.JLabel workerPlo;
     // End of variables declaration//GEN-END:variables
 
-    public JLabel getQtyChasis() {
-        return qtyChasis;
+    public JLabel getQtyGuion() {
+        return qtyGuion;
     }
-    public JLabel getQtyCarroceria() {
-        return this.qtyCarroceria;
+    public JLabel getQtyAnimacion() {
+        return this.qtyAnimacion;
     } 
-    public JLabel getQtyMotor() {
-        return this.qtyMotores;
+    public JLabel getQtyDoblaje() {
+        return this.qtyDoblaje;
     }
-    public JLabel getQtyRuedas() {
-        return this.qtyRuedas;
+    public JLabel getQtyEscenarios() {
+        return this.qtyEscenarios;
     }
-    public JLabel getQtyAcc() {
-        return this.qtyAcc;
+    public JLabel getQtyPlo() {
+        return this.qtyPlo;
     }
 
 }

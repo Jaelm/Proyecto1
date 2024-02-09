@@ -19,13 +19,12 @@ public class Functions {
         int count = calcWorkersQty(auxCantEmpl);
         
         if(count <= plant.maxWorkerQty){
-            //actualizo plant.configuracion del valor (chasis, carroceria, etc)
+            //Actualizo el valor de guion, animacion, escenario etc)
             plant.confi.setParametro(tipo, newValor);
-            //guardo en el txt los nuevos valores, lambo o no
             if(plant.isCartoon){
-                plant.confi.actualizarConfiguracion("src//classes//configuracionLambo.txt");
+                plant.confi.actualizarConfiguracion("src//classes//configuracionCartoon.txt");
             }else {
-                plant.confi.actualizarConfiguracion("src//classes//configuracionRolls.txt");
+                plant.confi.actualizarConfiguracion("src//classes//configuracionDisney.txt");
             }
             //leo txt para actualizar empleados por depto
             plant.actualizarEmplPorDepto();
@@ -48,7 +47,7 @@ public class Functions {
     
     public static void saveDatosIniciales(int durationDayMs, int deadline){
         
-        String path = "src//classes//deadlineAndDuration.txt";
+        String path = "src//classes//EntregaYDuracion.txt";
         String datosIniciales = (String.valueOf(durationDayMs)+","+String.valueOf(deadline));
         
         try {
@@ -60,7 +59,6 @@ public class Functions {
         }
         
         
-        //OJITO AQUI REVISAR SI NO ESTA AL REVEZ
         Main.CartoonStudio.setDaysDeadline(deadline);
         Main.CartoonStudio.setDayDurationInMs(durationDayMs);
         Main.CartoonStudio.setDiasInicio(deadline);

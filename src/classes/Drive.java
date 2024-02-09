@@ -56,7 +56,11 @@ public class Drive {
                     if(this.guionQty > this.maxGuionQty){
                         this.guionQty = this.maxGuionQty;
                     }
-                    
+                    if(isCartoon){
+                        dashboard.GlobalUI.getMainUI().getCNdashboard1().setGuionQtyLabel(this.guionQty);
+                    }else {                         
+                        dashboard.GlobalUI.getMainUI().getDNDashboard1().setGuionQtyLabel(this.guionQty);
+                    }
                     System.out.println("Guion producido: " + this.guionQty);
                 }
                 break;
@@ -66,18 +70,26 @@ public class Drive {
                     if(this.escenarioQty > this.maxEscenarioQty){
                         this.escenarioQty = this.maxEscenarioQty;
                 }
-                    
+                    if(isCartoon){
+                        dashboard.GlobalUI.getMainUI().getCNdashboard1().setEsceneriosQtyLabel(this.escenarioQty);
+                    }else{
+                        dashboard.GlobalUI.getMainUI().getDNDashboard1().setEscenariosQtyLabel(this.escenarioQty);
+                    }
                     System.out.println("Escenario producido: " + this.escenarioQty);
                 } 
                 break;
-            case "animacion":
+            case "animador":
                 if(this.animacionQty < this.maxAnimacionQty){
                     this.animacionQty += PartFinish;
                     if(this.animacionQty > this.maxAnimacionQty){
                         this.animacionQty = this.maxAnimacionQty;
                 }
-                    
-                    System.out.println("Escenario producido: " + this.animacionQty);
+                    if(isCartoon){
+                        dashboard.GlobalUI.getMainUI().getCNdashboard1().setAnimQtyLabel(this.animacionQty);
+                    }else{
+                        dashboard.GlobalUI.getMainUI().getDNDashboard1().setAnimaQtyLabel(this.animacionQty);
+                    }
+                    System.out.println("Animacion producida: " + this.animacionQty);
                 } 
                 break;
             case "actor":
@@ -86,8 +98,12 @@ public class Drive {
                     if(this.doblajeQty > this.maxDoblajeQty){
                         this.doblajeQty = this.maxDoblajeQty;
                 }
-                    
-                    System.out.println("Escenario producido: " + this.doblajeQty);
+                    if(isCartoon){
+                        dashboard.GlobalUI.getMainUI().getCNdashboard1().setDoblajeQtyLabel(this.doblajeQty);
+                    } else{
+                        dashboard.GlobalUI.getMainUI().getDNDashboard1().setDoblajeQtyLabel(this.doblajeQty);
+                    }
+                    System.out.println("Doblaje producido: " + this.doblajeQty);
                 } 
                 break;
             case "plotwist":
@@ -96,8 +112,12 @@ public class Drive {
                     if(this.plotwistQty > this.maxPlotwistQty){
                         this.plotwistQty = this.maxPlotwistQty;
                 }
-                    
-                    System.out.println("Escenario producido: " + this.plotwistQty);
+                    if(isCartoon){
+                        dashboard.GlobalUI.getMainUI().getCNdashboard1().setPloQtyLabel(this.plotwistQty);
+                    } else{
+                        dashboard.GlobalUI.getMainUI().getDNDashboard1().setPloQtyLabel(this.plotwistQty);
+                    }
+                    System.out.println("Plotwist producido: " + this.plotwistQty);
                 } 
                 break;
         }
@@ -114,6 +134,10 @@ public class Drive {
                     this.totalCapPlo += 1;
                     System.out.println("Creo un capitulo con Plotwist");
                     int dinero = this.getCapUtility(isCartoon);
+                    dashboard.GlobalUI.getMainUI().getCNdashboard1().getDashboardInfo().setGananciaNeta(dinero);
+                    dashboard.GlobalUI.getMainUI().getMainDashboard().getDashboardInfoLg().setGananciaNeta(dinero);
+                    dashboard.GlobalUI.getMainUI().getCNdashboard1().setQtyCapPloEmitidos(this.totalCapPlo);
+                    
                     return true;
                 }
                 return false;
@@ -123,6 +147,11 @@ public class Drive {
                     this.contCapPlo += 1;
                     this.totalCapitulos += 1;
                     System.out.println("Creo un capitulo");
+                    int dinero = this.getCapUtility(isCartoon); 
+                    dashboard.GlobalUI.getMainUI().getCNdashboard1().getDashboardInfo().setGananciaNeta(dinero);
+                    dashboard.GlobalUI.getMainUI().getMainDashboard().getDashboardInfoLg().setGananciaNeta(dinero);
+                    dashboard.GlobalUI.getMainUI().getCNdashboard1().setQtyCapEmitidos(this.totalCapitulos);
+                    
                     return true;
                 }
                 return false;
@@ -137,6 +166,11 @@ public class Drive {
                     this.totalCapPlo += 1;
                     System.out.println("Creo un capitulo con Plotwist");
                     int dinero = this.getCapUtility(isCartoon);
+                    dashboard.GlobalUI.getMainUI().getMainDashboard().getDashboardInfoRr().setGananciaNeta(dinero);
+                    //  ganancia rr dashboard
+                    dashboard.GlobalUI.getMainUI().getDNDashboard1().getDashboardInfo().setGananciaNeta(dinero);
+                    dashboard.GlobalUI.getMainUI().getDNDashboard1().setQtyCapEmitidos(this.totalCapitulos);
+                    
                     return true;
                 }
                 return false;
@@ -145,7 +179,13 @@ public class Drive {
                     this.restarDrive(isCartoon, false);
                     this.contCapPlo += 1;
                     this.totalCapitulos += 1;
+                    int dinero = this.getCapUtility(isCartoon);
                     System.out.println("Creo un capitulo");
+                    dashboard.GlobalUI.getMainUI().getMainDashboard().getDashboardInfoRr().setGananciaNeta(dinero);
+                    // ganancia rr dashboard
+                    dashboard.GlobalUI.getMainUI().getDNDashboard1().getDashboardInfo().setGananciaNeta(dinero);
+                    dashboard.GlobalUI.getMainUI().getDNDashboard1().setQtyCapEmitidos(this.totalCapitulos);
+                    
                     return true;
                 }
                 return false;
@@ -177,6 +217,9 @@ public class Drive {
             if(conPlow){
                 this.plotwistQty -= 1;
             }
+            
+                dashboard.GlobalUI.getMainUI().getCNdashboard1().setValoresDrive(guionQty, escenarioQty, animacionQty, doblajeQty, plotwistQty);
+
         } else {
             this.guionQty -= 1;
             this.escenarioQty -= 1;
@@ -186,6 +229,8 @@ public class Drive {
                 this.plotwistQty -= 3;
         
             }
+            
+            dashboard.GlobalUI.getMainUI().getDNDashboard1().setValoresDrive(guionQty, escenarioQty, animacionQty, doblajeQty, plotwistQty);
         }
     }
     

@@ -119,13 +119,13 @@ public class MainInterface extends javax.swing.JFrame {
     private dashboard.DC_Dashboard rRdashboard1;
     // End of variables declaration//GEN-END:variables
 
-    public CN_Dashboard getLGdashboard1() {
+    public CN_Dashboard getCNdashboard1() {
         return lGdashboard1;
     }
     public MainDashboard getMainDashboard() {
         return this.mainDashboard1;
     }
-    public DC_Dashboard getRrDashboard1() {
+    public DC_Dashboard getDNDashboard1() {
         return this.rRdashboard1;
     }
 }

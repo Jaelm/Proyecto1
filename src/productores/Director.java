@@ -89,9 +89,9 @@ public class Director extends Thread {
                             if(j==randomMin){
                                 //cambio a "supervisando"
                                 if(isCartoon){
-                                 
+                                    dashboard.GlobalUI.getMainUI().getCNdashboard1().setDirectorAccion("Supervisando al manager");
                                 }else{
-                                
+                                    dashboard.GlobalUI.getMainUI().getDNDashboard1().setDirectorAccion("Supervisando al manager");
                                 }                                
                                 verificarActividadManager();
                             }
@@ -140,13 +140,13 @@ public class Director extends Thread {
             faltas++;
             
             if(isCartoon){
-                
+                dashboard.GlobalUI.getMainUI().getCNdashboard1().setFaltasLabel(faltas);
                 int sal = this.calcSalarioRestado(faltas);
-                
+                dashboard.GlobalUI.getMainUI().getCNdashboard1().setSueldoDescontado(sal);
             }else{
-                
+                dashboard.GlobalUI.getMainUI().getDNDashboard1().setFaltasLabel(faltas);
                 int sal = this.calcSalarioRestado(faltas);
-                
+                dashboard.GlobalUI.getMainUI().getDNDashboard1().setSueldoDescontado(sal);
             }
 //            
         } else {
@@ -156,9 +156,9 @@ public class Director extends Thread {
         Thread.sleep(estudio.dayDurationMs / 57);//sleep 25 minutos
         //cambio a trabajando
         if(isCartoon){
-            
+            dashboard.GlobalUI.getMainUI().getCNdashboard1().setDirectorAccion("Trabajando");
         }else{
-            
+            dashboard.GlobalUI.getMainUI().getDNDashboard1().setDirectorAccion("Trabajando");
         }
     }
     

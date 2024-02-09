@@ -44,6 +44,10 @@ public class EstudioAnimacion extends Thread {
         this.diasInit = entrega;
         this.sueldoAcumu = 0;
         
+         
+        dashboard.GlobalUI.getMainUI().getMainDashboard().getDayDurationSpinner().setValue(this.dayDurationMs/1000);
+        dashboard.GlobalUI.getMainUI().getMainDashboard().getDeadlineSpinner().setValue(this.entrega);
+        
         actualizarEmplPorDepto();        
         crearWorkers();
         startManagerDir();
@@ -58,16 +62,26 @@ public class EstudioAnimacion extends Thread {
                 //get sueldos
                 int num = this.getSueldosPagados();
                 if(this.isCartoon){
+                    dashboard.GlobalUI.getMainUI().getMainDashboard().getDashboardInfoLg().setSueldosLabel(num);
+                    dashboard.GlobalUI.getMainUI().getCNdashboard1().getDashboardInfo().setSueldosLabel(num);
+                
                 }else{
+                    dashboard.GlobalUI.getMainUI().getMainDashboard().getDashboardInfoRr().setSueldosLabel(num);
+                    dashboard.GlobalUI.getMainUI().getDNDashboard1().getDashboardInfo().setSueldosLabel(num);
+                
                     }
                 //get ganancias
                 // get utilidad (ganancias - sueldos)
                 int ganancias = this.drive.getCapUtility(isCartoon);
                 int utilidad = ganancias - num;
                 if(this.isCartoon){
-                    
+                    dashboard.GlobalUI.getMainUI().getMainDashboard().getDashboardInfoLg().setUtilidadTotal(utilidad);
+                    dashboard.GlobalUI.getMainUI().getCNdashboard1().getDashboardInfo().setUtilidadTotal(utilidad);
+                
                 }else{
-               
+                    dashboard.GlobalUI.getMainUI().getMainDashboard().getDashboardInfoRr().setUtilidadTotal(utilidad);
+                    dashboard.GlobalUI.getMainUI().getDNDashboard1().getDashboardInfo().setUtilidadTotal(utilidad);
+                
                 }                                
                 
                 Thread.sleep(this.dayDurationMs);
@@ -86,6 +100,9 @@ public class EstudioAnimacion extends Thread {
         this.dayDurationMs = datos[0];
         this.entrega = datos[1];
         //setear daysdeadline y duration en UI
+        dashboard.GlobalUI.getMainUI().getMainDashboard().setDeadlineSpinner(this.entrega);
+        dashboard.GlobalUI.getMainUI().getMainDashboard().setDayDurationSpinner((int) (this.dayDurationMs/1000));
+    
     }
     
     public int getSueldosPagados(){
@@ -201,9 +218,9 @@ public class EstudioAnimacion extends Thread {
     public int restartDeadLine(){
         this.capituloTransmitido += this.drive.totalCapitulos + this.drive.totalCapPlo;
         if(isCartoon){
-            
+            dashboard.GlobalUI.getMainUI().getCNdashboard1().setCapTransmitidos(this.capituloTransmitido);
         }else{
-            
+            dashboard.GlobalUI.getMainUI().getDNDashboard1().setCapEmitidos(this.capituloTransmitido);
         }
         return this.entrega = diasInit;        
     }

@@ -103,8 +103,12 @@ public class ProjectManager extends Thread{
                         // set viendo one piece
                         if(estudio.isCartoon){
                             //viendo one piece
+                        dashboard.GlobalUI.getMainUI().getCNdashboard1().setManagerAccion("Viendo One piece");
+
                         }else{
                            //viendo one piece
+                            dashboard.GlobalUI.getMainUI().getDNDashboard1().setManagerAccion("Viendo One piece");
+
                         }
                     }
                 } else { // Media hora intervalos
@@ -114,17 +118,22 @@ public class ProjectManager extends Thread{
                         // set revisando el avance del proyecto
                         if(estudio.isCartoon){
                             //revisando el avance del proyecto
+                            dashboard.GlobalUI.getMainUI().getCNdashboard1().setManagerAccion("Revisandoel avance del proyecto");
                         }else{
                             //revisando el avance del proyecto
+                            dashboard.GlobalUI.getMainUI().getDNDashboard1().setManagerAccion("Revisandoel avance del proyecto");
+
                         }
                     }
                 }
             } else { // El resto del día
                 // set cambiando contador
                 if(estudio.isCartoon){
-                    //
+                    dashboard.GlobalUI.getMainUI().getCNdashboard1().setManagerAccion("Cambiando contador");
+
                 }else{
-                    //
+                    dashboard.GlobalUI.getMainUI().getDNDashboard1().setManagerAccion("Cambiando contador");
+
                 }
                 
                 if (estaViendoOnePiece()) {
@@ -144,11 +153,18 @@ public class ProjectManager extends Thread{
             diasTotal++;
             //
             if(estudio.isCartoon){
-                // set dias restantes UI          
+                // set dias restantes UI    
+                dashboard.GlobalUI.getMainUI().getCNdashboard1().setDeadlineLabel(estudio.entrega);                 
                 // set dias totales UI
+                dashboard.GlobalUI.getMainUI().getCNdashboard1().setDiasTotales(diasTotal);
+
             }else{
-                // set dias restantes UI               
+                // set dias restantes UI      
+                dashboard.GlobalUI.getMainUI().getDNDashboard1().setDeadlineLabel(estudio.entrega);                 
+
                 // set dias totales UI
+                dashboard.GlobalUI.getMainUI().getDNDashboard1().setDiasTotales(diasTotal);
+
             }
 
             }else{

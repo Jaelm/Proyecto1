@@ -1,6 +1,7 @@
-guion=1
 escenario=1
+actor=2
 animacion=1
-actor=1
+guion=2
 plotwist=1
 ensamblador=1
+animador=6
